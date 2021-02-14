@@ -1,0 +1,36 @@
+Friday Oct 30, 2020  
+ what is the fastest way to check if a string is all the same char ? 
+ in this case I am testing for a string of all zeros
+ but you could just as easily use the first char,  s[0]
+
+ repeated the same test, ten thousand times to get the run-times up there
+
+# for loop
+time python a.py > /dev/null 
+
+    real    0m0.114s
+    user    0m0.095s
+    sys     0m0.013s
+
+# convert list to a set
+time python b.py > /dev/null 
+
+    real    0m0.072s     <-- 53% faster than a.py 
+    user    0m0.055s
+    sys     0m0.011s
+
+
+# one line lamda function
+time python c.py > /dev/null 
+
+    real    0m0.123s
+    user    0m0.106s
+    sys     0m0.011s
+
+# from collections import Counter
+time python d.py > /dev/null 
+
+    real    0m0.147s
+    user    0m0.127s
+    sys     0m0.011s
+
